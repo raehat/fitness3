@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_default_for_app">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/complete_profile"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please fill these details"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/img"
+                android:layout_marginTop="30dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_color_default"/>
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="It will help us to know more about you!"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/txt1"/>
+
+            <EditText
+                android:id="@+id/et1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Gender"
+                android:textColor="@color/text_color_default"
+                android:textColorHint="#A6A6A6"
+                android:background="@drawable/edit_text_bg_default"
+                android:paddingVertical="8dp"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@drawable/gender"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:layout_below="@id/txt2"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/et2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Gender"
+                android:textColor="@color/text_color_default"
+                android:textColorHint="#A6A6A6"
+                android:background="@drawable/edit_text_bg_default"
+                android:paddingVertical="8dp"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@drawable/gender"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:layout_below="@id/et1"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Gender"
+                android:textColor="@color/text_color_default"
+                android:textColorHint="#A6A6A6"
+                android:background="@drawable/edit_text_bg_default"
+                android:paddingVertical="8dp"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@drawable/gender"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:layout_below="@id/et2"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Choose Gender"
+                android:textColor="@color/text_color_default"
+                android:textColorHint="#A6A6A6"
+                android:background="@drawable/edit_text_bg_default"
+                android:paddingVertical="8dp"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@drawable/gender"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:layout_below="@id/et3"
+                android:layout_marginTop="20dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

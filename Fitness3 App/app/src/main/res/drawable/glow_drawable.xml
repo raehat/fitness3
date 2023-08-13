@@ -1,0 +1,11 @@
+<!-- res/drawable/glow_drawable.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="@color/glow_solana"
+        android:endColor="@color/glow_solana"
+        android:angle="0"/>
+    <size
+        android:width="400dp"
+        android:height="400dp"/>
+    <corners android:radius="200dp"/>
+</shape>

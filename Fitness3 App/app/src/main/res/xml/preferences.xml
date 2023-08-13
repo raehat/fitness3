@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore>
+    <preferences>
+        <int name="example_counter" />
+        <boolean name="example_flag" />
+    </preferences>
+</datastore>

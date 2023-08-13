@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onboarding.OnBoardingFragment1">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/on_boarding_1"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Count your steps"
+        android:layout_below="@id/img"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/text_color_default"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt1"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="5dp"
+        android:text="You can choose the plan you find right, and we will help you count your steps, and keep track of calories burnt."/>
+
+</RelativeLayout>

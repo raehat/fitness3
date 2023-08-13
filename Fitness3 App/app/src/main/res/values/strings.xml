@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SolanaTry2</string>
+    <string name="fitness3">Fit</string>
+    <string name="become_fit_one_step_at_a_time">Become fit, one step at a time</string>
+    <string name="get_started">Get Started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+</resources>
