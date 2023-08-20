@@ -9,19 +9,6 @@
     <FrameLayout
         android:id="@+id/login_frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="650dp"/>
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Connect to Wallet"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/button_design_default_circular"
-        android:textColor="@color/white"
-        android:layout_marginHorizontal="40dp"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"/>
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

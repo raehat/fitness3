@@ -16,4 +16,10 @@
     <color name="text_color_default">@color/white</color>
     <color name="background_color_default_for_app">@color/black</color>
     <color name="glow_solana">#1A1A1A</color>
+    <color name="my_card_color">#3A3A3A</color>
+  <!-- Base application theme. -->
+    <style name="Base.Theme.SolanaTry2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
 </resources>

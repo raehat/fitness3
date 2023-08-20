@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.example.solanatry2.MyApplication
 import com.example.solanatry2.R
 import com.example.solanatry2.databinding.ActivityLoginBinding
+import com.example.solanatry2.home.MainActivity
 import com.solana.mobilewalletadapter.clientlib.ActivityResultSender
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,14 +25,26 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        dataStoreManager = (applicationContext as MyApplication).dataStoreManager
         val activityResultSender = ActivityResultSender(this)
-        dataStoreManager = DataStoreManager(this)
+
+        CoroutineScope(Dispatchers.Main).launch {
+            (applicationContext as MyApplication).dataStoreManager.setOnBoardingFinished(true)
+        }
 
         val viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.login_frame_layout, LoginFragment1())
-            .commit()
+        CoroutineScope(Dispatchers.Main).launch {
+            dataStoreManager.isWalletStateEmpty().collect() {
+                if (it) {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.login_frame_layout, LoginFragment1(activityResultSender))
+                        .commit()
+                } else {
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                }
+            }
+        }
 
         viewModel.toastMessage.observe(this) { message ->
             run {
@@ -41,7 +55,6 @@ class LoginActivity : AppCompatActivity() {
         viewModel.moveToAnotherFragment.observe(this) {moveToAnotherFragment ->
             if (moveToAnotherFragment) {
                 run {
-                    binding.loginButton.text = "NEXT"
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.login_frame_layout, LoginFragment2())
@@ -67,16 +80,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                         .show()
                 }
-            }
-        }
-
-        binding.loginButton.setOnClickListener {
-            val identityUri = Uri.parse(application.getString((R.string.id_url)))
-            val iconUri = Uri.parse(application.getString((R.string.id_favico)))
-            val identityName = application.getString((R.string.app_name))
-
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.connectToWallet(activityResultSender, identityUri, iconUri, identityName, dataStoreManager)
             }
         }
     }

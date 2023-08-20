@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color_default_for_app">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color_default_for_app">
+
+        <ImageView
+            android:id="@+id/music_img"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/sol1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <org.romancha.playpause.PlayPauseView
+            android:id="@+id/music_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            app:fill_color="@color/text_color_default"
+            app:pause_bg="@color/cardview_dark_background"
+            app:play_bg="@color/cardview_dark_background"
+            android:layout_marginLeft="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SONG NAME"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/music_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Some description about the song"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

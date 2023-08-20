@@ -12,7 +12,23 @@
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
     </style>
+
     <color name="text_color_default">@color/black</color>
     <color name="background_color_default_for_app">@color/white</color>
     <color name="glow_solana">#AAAAAA</color>
+    <color name="my_card_color">#f0f4fc</color>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SolanaTry2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.SolanaTry2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SolanaTry2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SolanaTry2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

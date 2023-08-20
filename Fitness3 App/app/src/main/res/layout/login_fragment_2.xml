@@ -41,11 +41,11 @@
                 android:layout_below="@id/txt1"/>
 
             <EditText
-                android:id="@+id/et1"
+                android:id="@+id/choose_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Choose Gender"
-                android:textColor="@color/text_color_default"
+                android:textColor="@color/black"
                 android:textColorHint="#A6A6A6"
                 android:background="@drawable/edit_text_bg_default"
                 android:paddingVertical="8dp"
@@ -57,58 +57,72 @@
                 android:layout_below="@id/txt2"
                 android:layout_marginTop="30dp"/>
 
-            <EditText
-                android:id="@+id/et2"
+            <TextView
+                android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Choose Gender"
-                android:textColor="@color/text_color_default"
+                android:hint="Date of birth"
+                android:textColor="@color/black"
                 android:textColorHint="#A6A6A6"
                 android:background="@drawable/edit_text_bg_default"
                 android:paddingVertical="8dp"
                 android:textSize="14sp"
                 android:layout_marginHorizontal="30dp"
-                android:drawableLeft="@drawable/gender"
+                android:drawableLeft="@drawable/calendar"
                 android:drawablePadding="10dp"
                 android:paddingHorizontal="20dp"
-                android:layout_below="@id/et1"
+                android:layout_below="@id/choose_gender"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/et3"
+                android:id="@+id/weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Choose Gender"
-                android:textColor="@color/text_color_default"
+                android:hint="Your weight (in cm)"
+                android:textColor="@color/black"
                 android:textColorHint="#A6A6A6"
                 android:background="@drawable/edit_text_bg_default"
                 android:paddingVertical="8dp"
                 android:textSize="14sp"
                 android:layout_marginHorizontal="30dp"
-                android:drawableLeft="@drawable/gender"
+                android:drawableLeft="@drawable/weight_scale_1"
                 android:drawablePadding="10dp"
                 android:paddingHorizontal="20dp"
-                android:layout_below="@id/et2"
+                android:layout_below="@id/dob"
                 android:layout_marginTop="20dp"/>
 
             <EditText
+                android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Choose Gender"
-                android:textColor="@color/text_color_default"
+                android:hint="Your height (in cm)"
+                android:textColor="@color/black"
                 android:textColorHint="#A6A6A6"
                 android:background="@drawable/edit_text_bg_default"
                 android:paddingVertical="8dp"
                 android:textSize="14sp"
                 android:layout_marginHorizontal="30dp"
-                android:drawableLeft="@drawable/gender"
+                android:drawableLeft="@drawable/swap"
                 android:drawablePadding="10dp"
                 android:paddingHorizontal="20dp"
-                android:layout_below="@id/et3"
+                android:layout_below="@id/weight"
                 android:layout_marginTop="20dp"/>
 
         </RelativeLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_design_default_circular"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="40dp"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

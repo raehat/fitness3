@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background_color_default_for_app">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome back,"
+                android:textColor="#C6C6C6"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raehat Singh Nanda"
+                android:layout_marginLeft="40dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_color_default"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/my_card_color">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMI (Body Mass Index)"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/text_color_default"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your BMI is 21. BMI should ideally lie between 19 and 25"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginHorizontal="20dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_design_default_circular"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Know More"
+                        android:textAllCaps="false"
+                        android:textSize="12sp"
+                        android:paddingHorizontal="40dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity Status"
+                android:textSize="20sp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/activity_chart"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Walking!"
+                android:layout_marginLeft="40dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                app:cardCornerRadius="20sp"
+                android:background="@color/my_card_color">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Know your steps"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/text_color_default"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start walking today! Count you steps, complete tasks, and win exclusive NFTs!"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:layout_marginHorizontal="20dp" />
+
+                    <Button
+                        android:id="@+id/start_walking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_design_default_circular"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Start Walking"
+                        android:textAllCaps="false"
+                        android:textSize="12sp"
+                        android:paddingHorizontal="40dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

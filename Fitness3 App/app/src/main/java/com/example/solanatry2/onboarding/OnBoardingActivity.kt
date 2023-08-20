@@ -5,9 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.solanatry2.MyApplication
 import com.example.solanatry2.R
 import com.example.solanatry2.databinding.OnBoardingBinding
 import com.example.solanatry2.login.LoginActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding : OnBoardingBinding
@@ -16,6 +22,15 @@ class OnBoardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = OnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        CoroutineScope(Dispatchers.Default).launch {
+            (application as MyApplication).dataStoreManager.isOnBoardingFinished().collect() {
+                if (it == true) {
+                    startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
+                }
+            }
+        }
 
         val getStartedButton = binding.getStartedButtonView
         supportFragmentManager

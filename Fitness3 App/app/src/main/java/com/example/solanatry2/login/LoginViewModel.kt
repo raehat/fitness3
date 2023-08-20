@@ -1,12 +1,16 @@
 package com.example.solanatry2.login
 
 import DataStoreManager
+import UserData
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.solana.mobilewalletadapter.clientlib.ActivityResultSender
 import com.solana.mobilewalletadapter.clientlib.MobileWalletAdapter
 import com.solana.mobilewalletadapter.clientlib.TransactionResult
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
     val toastMessage = MutableLiveData<String>()
@@ -20,11 +24,6 @@ class LoginViewModel : ViewModel() {
         identityName: String,
         dataStoreManager: DataStoreManager
     ) {
-        if (!dataStoreManager.isWalletStateEmpty()) {
-            showToast("not empty!")
-            return
-        }
-
         val walletAdapterClient = MobileWalletAdapter()
         val result = walletAdapterClient.transact(activityResultSender) {
             authorize(
@@ -50,6 +49,21 @@ class LoginViewModel : ViewModel() {
 
     private fun showToast(message : String) {
         toastMessage.postValue(message)
+    }
+
+    fun saveLoginDataAndMoveToHomePage(
+        gender: String,
+        dob: String,
+        weight: String,
+        height: String,
+        dataStoreManager: DataStoreManager
+    ) {
+        CoroutineScope(Dispatchers.Main).launch {
+            dataStoreManager.setUserData(
+                UserData(gender, dob, weight, height)
+            )
+            dataStoreManager.userDataSaved(true)
+        }
     }
 
 }
