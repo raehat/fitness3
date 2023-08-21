@@ -1,14 +1,17 @@
 package com.example.solanatry2.login
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.solanatry2.MyApplication
 import com.example.solanatry2.databinding.LoginFragment2Binding
+import com.example.solanatry2.home.MainActivity
 import java.util.Calendar
 
 class LoginFragment2 : Fragment() {
@@ -46,13 +49,14 @@ class LoginFragment2 : Fragment() {
         binding.nextButton.setOnClickListener {
             with(binding) {
                 viewModel.saveLoginDataAndMoveToHomePage(
-                    chooseGender.text.toString(),
+                    chooseName.text.toString(),
                     dob.text.toString(),
                     weight.text.toString(),
                     height.text.toString(),
                     dataStoreManager
                 )
             }
+            viewModel.moveToMainActivity.postValue(true)
         }
 
         return binding.root

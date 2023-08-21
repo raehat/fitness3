@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.asLiveData
 import com.example.solanatry2.MyApplication
 import com.example.solanatry2.R
 import com.example.solanatry2.databinding.OnBoardingBinding
@@ -23,12 +24,10 @@ class OnBoardingActivity : AppCompatActivity() {
         binding = OnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        CoroutineScope(Dispatchers.Default).launch {
-            (application as MyApplication).dataStoreManager.isOnBoardingFinished().collect() {
-                if (it == true) {
-                    startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
-                }
+        CoroutineScope(Dispatchers.Main).launch {
+            val it = (application as MyApplication).dataStoreManager.isOnBoardingFinished().first()
+            if (it == true) {
+                startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
             }
         }
 

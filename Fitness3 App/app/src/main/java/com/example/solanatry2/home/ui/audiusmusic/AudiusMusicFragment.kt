@@ -19,20 +19,26 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.romancha.playpause.PlayPauseView
 
 
 class AudiusMusicFragment : Fragment() {
+
+    lateinit var viewModel : AudiusMusicViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentAudiusMusicBinding.inflate(layoutInflater)
-        val viewModel = ViewModelProvider(requireActivity())[AudiusMusicViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[AudiusMusicViewModel::class.java]
 
-        viewModel.showToastMessage.observe(requireActivity()) {message ->
+        viewModel.showToastMessage.observe(requireActivity()) { message ->
             Toast.makeText(requireActivity(), message, Toast.LENGTH_LONG).show()
         }
+
+        binding.audiusProgress.visibility = View.VISIBLE
 
         CoroutineScope(Dispatchers.IO).launch {
             val result = viewModel.getTrendingTracks()
@@ -44,6 +50,7 @@ class AudiusMusicFragment : Fragment() {
                     viewModel::setSelectedPosition,
                     ::openBottomSheet
                 )
+                binding.audiusProgress.visibility = View.GONE
                 binding.myRecyclerview.apply {
                     adapter = myAdapter
                     layoutManager = LinearLayoutManager(requireActivity())
@@ -55,7 +62,7 @@ class AudiusMusicFragment : Fragment() {
         return binding.root
     }
 
-    fun openBottomSheet() {
+    fun openBottomSheet(playPauseView: PlayPauseView) {
         val bottomSheet = AudiusMusicBottomSheet()
         bottomSheet.show(requireActivity().supportFragmentManager, "ModalBottomSheet")
     }

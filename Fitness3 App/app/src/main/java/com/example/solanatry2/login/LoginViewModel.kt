@@ -15,7 +15,8 @@ import kotlinx.coroutines.launch
 class LoginViewModel : ViewModel() {
     val toastMessage = MutableLiveData<String>()
     val noWalletFound = MutableLiveData<Boolean>()
-    val moveToAnotherFragment = MutableLiveData<Boolean>()
+    val moveToAnotherFragment = MutableLiveData(false)
+    val moveToMainActivity = MutableLiveData<Boolean>()
 
     suspend fun connectToWallet(
         activityResultSender: ActivityResultSender,
@@ -52,7 +53,7 @@ class LoginViewModel : ViewModel() {
     }
 
     fun saveLoginDataAndMoveToHomePage(
-        gender: String,
+        name: String,
         dob: String,
         weight: String,
         height: String,
@@ -60,7 +61,7 @@ class LoginViewModel : ViewModel() {
     ) {
         CoroutineScope(Dispatchers.Main).launch {
             dataStoreManager.setUserData(
-                UserData(gender, dob, weight, height)
+                UserData(name, dob, weight, height)
             )
             dataStoreManager.userDataSaved(true)
         }

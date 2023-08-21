@@ -7,12 +7,8 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.solana.mobilewalletadapter.clientlib.protocol.MobileWalletAdapterClient
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 class DataStoreManager(private val context: Context) {
 
@@ -24,7 +20,7 @@ class DataStoreManager(private val context: Context) {
         val ON_BOARDING = booleanPreferencesKey("ON_BOARDING")
         val IS_WALLET_EMPTY = booleanPreferencesKey("IS_WALLET_EMPTY")
 
-        val GENDER = stringPreferencesKey("GENDER")
+        val NAME = stringPreferencesKey("NAME")
         val DOB = stringPreferencesKey("DOB")
         val WEIGHT = stringPreferencesKey("WEIGHT")
         val HEIGHT = stringPreferencesKey("HEIGHT")
@@ -70,14 +66,16 @@ class DataStoreManager(private val context: Context) {
 
     suspend fun setUserData(userData: UserData) {
         context.dataStore.edit {
-            it[GENDER] = userData.gender
+            it[NAME] = userData.name
             it[DOB] = userData.dob
             it[WEIGHT] = userData.weight
             it[HEIGHT] = userData.height
         }
     }
 
-    fun getGender() = context.dataStore.data.map { it[GENDER] }
+    fun getPublicKey() = context.dataStore.data.map { it[PUBLIC_KEY] }
+
+    fun getName() = context.dataStore.data.map { it[NAME] }
     fun getDOB() = context.dataStore.data.map { it[DOB] }
     fun getWeight() = context.dataStore.data.map { it[WEIGHT] }
     fun getHeight() = context.dataStore.data.map { it[HEIGHT] }
@@ -106,7 +104,7 @@ data class WalletState(
 )
 
 data class UserData(
-    val gender: String,
+    val name: String,
     val dob: String,
     val weight: String,
     val height: String

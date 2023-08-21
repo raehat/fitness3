@@ -24,6 +24,7 @@
                 android:layout_marginTop="60dp" />
 
             <TextView
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Raehat Singh Nanda"
@@ -56,6 +57,7 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/bmi_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Your BMI is 21. BMI should ideally lie between 19 and 25"
@@ -64,6 +66,7 @@
                         android:layout_marginHorizontal="20dp" />
 
                     <Button
+                        android:id="@+id/know_more_button"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:background="@drawable/button_design_default_circular"

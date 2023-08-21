@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SolanaTry2</string>
+    <string name="app_name">Fitness3.0</string>
     <string name="fitness3">Fit</string>
     <string name="become_fit_one_step_at_a_time">Become fit, one step at a time</string>
     <string name="get_started">Get Started</string>
@@ -52,8 +52,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Fitness3.0</string>
+    <string name="nav_header_subtitle">Fitness app powered by web3</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 

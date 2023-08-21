@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/music_background_gradient">
 
@@ -32,6 +33,7 @@
            android:textStyle="bold"/>
 
        <TextView
+           android:id="@+id/singer_name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="Justin Believer"
@@ -42,10 +44,61 @@
 
        <ProgressBar
            android:id="@+id/music_progress_bar"
+           style="?android:attr/progressBarStyleHorizontal"
            android:layout_width="match_parent"
            android:layout_height="20dp"
            android:layout_marginTop="30dp"
            android:layout_marginHorizontal="40dp"/>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginHorizontal="40dp"
+           android:orientation="horizontal">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="0:00"
+               android:textColor="@color/white"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="2:12"
+               android:layout_alignParentEnd="true"
+               android:textColor="@color/white"/>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginHorizontal="40dp"
+           android:layout_marginBottom="40dp"
+           android:layout_marginTop="30dp">
+
+           <ImageView
+               android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:src="@drawable/baseline_switch_left_24"/>
+
+           <org.romancha.playpause.PlayPauseView
+               android:id="@+id/play_pause_bottom_sheet"
+               android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:layout_centerHorizontal="true"
+               app:fill_color="#8A8A8A"
+               app:play_bg="@color/white"
+               app:pause_bg="@color/white"/>
+
+           <ImageView
+               android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:layout_alignParentEnd="true"
+               android:src="@drawable/baseline_switch_left_24"/>
+
+       </RelativeLayout>
 
    </LinearLayout>
 

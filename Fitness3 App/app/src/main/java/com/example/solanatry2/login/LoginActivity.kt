@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import com.example.solanatry2.MyApplication
 import com.example.solanatry2.R
 import com.example.solanatry2.databinding.ActivityLoginBinding
@@ -15,6 +16,7 @@ import com.example.solanatry2.home.MainActivity
 import com.solana.mobilewalletadapter.clientlib.ActivityResultSender
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -33,16 +35,16 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+
+        viewModel.moveToMainActivity.observe(this) {
+            if (it) {
+                startMainActivity()
+            }
+        }
+
         CoroutineScope(Dispatchers.Main).launch {
-            dataStoreManager.isWalletStateEmpty().collect() {
-                if (it) {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.login_frame_layout, LoginFragment1(activityResultSender))
-                        .commit()
-                } else {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                }
+            if (!dataStoreManager.isWalletStateEmpty().first()) {
+                startMainActivity()
             }
         }
 
@@ -58,6 +60,13 @@ class LoginActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.login_frame_layout, LoginFragment2())
+                        .commit()
+                }
+            } else {
+                run {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.login_frame_layout, LoginFragment1(activityResultSender))
                         .commit()
                 }
             }
@@ -82,5 +91,9 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun startMainActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }

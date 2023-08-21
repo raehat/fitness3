@@ -25,11 +25,12 @@ import java.io.IOException
 
 class AudiusMusicViewModel : ViewModel() {
     private val TRENDING_TRACKS_URL = "https://audius-metadata-3.figment.io/v1/tracks/trending"
-    private var mediaPlayer : MediaPlayer = MediaPlayer()
+    var mediaPlayer : MediaPlayer = MediaPlayer()
     private var musicCurrId : String = ""
     var selectedPositionOfResult : Int = -1
     lateinit var audiusData : AudiusData
     val showToastMessage = MutableLiveData<String>()
+    val playPauseStateLiveData = MutableLiveData<MusicState>()
 
     suspend fun getTrendingTracks(): AudiusData {
         val response = client.get<AudiusData> {
@@ -62,21 +63,22 @@ class AudiusMusicViewModel : ViewModel() {
         }
     }
 
-    fun playPauseMusic(musicState: MusicState, idMusic: String) {
+    fun playPauseMusic(musicState: MusicState, idMusic: String? = null) {
         when (musicState) {
             MusicState.PLAYING -> handleStateWhenMusicPlaying(idMusic)
             MusicState.PAUSED -> handleStateWhenMusicPaused(idMusic)
         }
     }
 
-    private fun handleStateWhenMusicPlaying(idMusic: String) {
+    private fun handleStateWhenMusicPlaying(idMusic: String?) {
+        playPauseStateLiveData.postValue(MusicState.PLAYING)
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
             try {
-                if (musicCurrId == idMusic) {
-                    mediaPlayer.start()
+                if (idMusic != null && (musicCurrId != idMusic || musicCurrId.isEmpty())) {
+                    playNewMusic(idMusic)
                 } else {
-                    showToastMessage.postValue("Stop the previous song to play this")
+                    mediaPlayer.start()
                 }
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -93,9 +95,10 @@ class AudiusMusicViewModel : ViewModel() {
         mediaPlayer.start()
     }
 
-    private fun handleStateWhenMusicPaused(idMusic: String) {
+    private fun handleStateWhenMusicPaused(idMusic: String?) {
+        playPauseStateLiveData.postValue(MusicState.PAUSED)
         if (mediaPlayer.isPlaying) {
-            if (musicCurrId == idMusic) {
+            if (idMusic == null || musicCurrId == idMusic) {
                 mediaPlayer.pause();
             } else {
                 playNewMusic(idMusic)

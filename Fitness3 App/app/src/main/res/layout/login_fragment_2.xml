@@ -5,8 +5,9 @@
     android:background="@color/background_color_default_for_app">
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="600dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,6 +18,7 @@
                 android:id="@+id/img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
                 android:src="@drawable/complete_profile"
                 android:layout_centerHorizontal="true"/>
 
@@ -41,10 +43,10 @@
                 android:layout_below="@id/txt1"/>
 
             <EditText
-                android:id="@+id/choose_gender"
+                android:id="@+id/choose_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Choose Gender"
+                android:hint="Your Name"
                 android:textColor="@color/black"
                 android:textColorHint="#A6A6A6"
                 android:background="@drawable/edit_text_bg_default"
@@ -71,7 +73,7 @@
                 android:drawableLeft="@drawable/calendar"
                 android:drawablePadding="10dp"
                 android:paddingHorizontal="20dp"
-                android:layout_below="@id/choose_gender"
+                android:layout_below="@id/choose_name"
                 android:layout_marginTop="20dp"/>
 
             <EditText
@@ -117,12 +119,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:layout_below="@id/scrollview"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:background="@drawable/button_design_default_circular"
         android:textColor="@color/white"
+        android:layout_marginTop="40dp"
         android:layout_marginHorizontal="40dp"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"/>
+        android:textAllCaps="false"/>
 
 </RelativeLayout>

@@ -12,13 +12,14 @@ import com.example.solanatry2.databinding.AudiusMusicCardBinding
 import com.example.solanatry2.home.ui.audiusmusic.AudiusMusicViewModel
 import com.example.solanatry2.home.ui.audiusmusic.audiusdataclass.AudiusData
 import com.example.solanatry2.home.ui.audiusmusic.musicbottomsheet.AudiusMusicBottomSheet
+import org.romancha.playpause.PlayPauseView
 
 class AudiusRecyclerViewAdapter(
     private val audiusDataClass: AudiusData,
     private val context: FragmentActivity,
     private val playMusicCallBack : (AudiusMusicViewModel.MusicState, String) -> Unit,
     private val setSelectedPositionCallback : (Int) -> Unit,
-    private val openBottomSheet: () -> Unit
+    private val openBottomSheet: (PlayPauseView) -> Unit
 ) : RecyclerView.Adapter<AudiusRecyclerViewAdapter.ViewHolder>() {
 
     // create new views
@@ -48,7 +49,7 @@ class AudiusRecyclerViewAdapter(
             .into(holder.musicImg)
 
         holder.itemView.setOnClickListener {
-            openBottomSheet()
+            openBottomSheet(holder.musicPlayPause)
         }
 
     }
