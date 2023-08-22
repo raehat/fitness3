@@ -1,3 +1,10 @@
+# We recommend you to watch the demo video for better understanding
+https://youtu.be/TdGgbLvnTdA 
+
+#Description
+Fitness3.0 is a web3-based fitness app. You can connect your Solflare Android wallet (or any Android wallet that supports Solana) and create an account. The goal: achieve 10,000 daily steps. Reach this target, and you'll be rewarded with cNFTs as a testament to your hard work and dedication. These cNFTs also include voucher types, redeemable for discounts on sponsored products. The combination of rewarding achievements and unlocking boosts/rewards through cNFTs is a groundbreaking innovation, brought to life by Fitness3.0.
+
+And to combat the occasional monotony of walking, we've integrated Audius directly into our app! Access and stream your favorite songs from Audius within our app. A dedicated section allows you to effortlessly browse, play, and pause tracks, making your fitness journey all the more enjoyable.
 
 ![WhatsApp Image 2023-08-22 at 5 42 32 AM (1)](https://github.com/raehat/fitness3/assets/77321971/c4322911-ae86-443a-ab72-cc1c483802d6)
 ![WhatsApp Image 2023-08-22 at 5 42 30 AM](https://github.com/raehat/fitness3/assets/77321971/29139b82-0cbd-4586-97f3-665caedce318)
