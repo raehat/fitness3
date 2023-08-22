@@ -7,7 +7,6 @@ Fitness3.0 is a web3-based fitness app. You can connect your Solflare Android wa
 And to combat the occasional monotony of walking, we've integrated Audius directly into our app! Access and stream your favorite songs from Audius within our app. A dedicated section allows you to effortlessly browse, play, and pause tracks, making your fitness journey all the more enjoyable.
 
 # Screenshots
-
 ![WhatsApp Image 2023-08-22 at 5 42 32 AM (1)](https://github.com/raehat/fitness3/assets/77321971/c4322911-ae86-443a-ab72-cc1c483802d6)
 ![WhatsApp Image 2023-08-22 at 5 42 30 AM](https://github.com/raehat/fitness3/assets/77321971/29139b82-0cbd-4586-97f3-665caedce318)
 ![WhatsApp Image 2023-08-22 at 5 42 30 AM (1)](https://github.com/raehat/fitness3/assets/77321971/c52a67d1-d726-489d-bf42-a2c9585a445c)
