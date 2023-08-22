@@ -153,7 +153,7 @@ let initBalance: number, balance: number;
 
   // fully mint a single compressed NFT
   console.log(`Minting a single compressed NFT to ${testWallet.publicKey.toBase58()}...`);
-  const user = loadWalletKey("C:/Users/surbh/OneDrive/Desktop/projects/compressed-nfts/mykey.json")
+  const user = loadWalletKey("mykey.json")
   await mintCompressedNFT(
     connection,
     payer,
