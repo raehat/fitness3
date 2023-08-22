@@ -1,4 +1,4 @@
-![WhatsApp Image 2023-08-22 at 5 42 34 AM (1)](https://github.com/raehat/fitness3/assets/77321971/582af4b6-1fc5-466e-a9c7-dfbfb8a00de2)# We recommend you to watch the demo video for better understanding
+# We recommend you to watch the demo video for better understanding
 https://youtu.be/TdGgbLvnTdA 
 
 # Description
