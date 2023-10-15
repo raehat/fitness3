@@ -8,7 +8,7 @@ import {
 } from "@metaplex-foundation/mpl-bubblegum";
 import { CreateMetadataAccountArgsV3 } from "@metaplex-foundation/mpl-token-metadata";
 
-// import custom helpers for demos
+// import custom helpers for demo
 import { loadKeypairFromFile, loadOrGenerateKeypair, numberFormatter } from "@/utils/helpers";
 
 // import custom helpers to mint compressed NFTs
