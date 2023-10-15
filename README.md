@@ -15,4 +15,4 @@ And to combat the occasional monotony of walking, we've integrated Audius direct
 ![WhatsApp Image 2023-08-22 at 5 42 33 AM](https://github.com/raehat/fitness3/assets/77321971/92ac349e-10c9-4e84-9699-97fb785d52a5)
 ![WhatsApp Image 2023-08-22 at 5 42 32 AM](https://github.com/raehat/fitness3/assets/77321971/5a3dd13d-6f17-4f43-92f4-c6e91faf25ea)
 ![WhatsApp Image 2023-08-22 at 5 42 32 AM (1)](https://github.com/raehat/fitness3/assets/77321971/5546020e-704e-4f18-ba14-865bf4779445)
-
+ 
