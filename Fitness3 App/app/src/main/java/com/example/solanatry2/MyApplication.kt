@@ -9,6 +9,7 @@ class MyApplication : Application() {
     lateinit var dataStoreManager: DataStoreManager
     override fun onCreate() {
         super.onCreate()
+        // dataStoreManager
         dataStoreManager = DataStoreManager(applicationContext)
     }
 
